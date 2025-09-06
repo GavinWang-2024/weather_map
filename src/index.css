@@ -1,0 +1,130 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Weather Data Visualization Design System
+Professional meteorological interface with temperature gradients and scientific aesthetics
+*/
+
+@layer base {
+  :root {
+    /* Core interface colors */
+    --background: 220 25% 8%;
+    --foreground: 210 25% 95%;
+
+    --card: 220 20% 12%;
+    --card-foreground: 210 25% 95%;
+
+    --popover: 220 20% 12%;
+    --popover-foreground: 210 25% 95%;
+
+    /* Weather-themed primary colors */
+    --primary: 200 85% 55%;
+    --primary-foreground: 220 25% 8%;
+
+    --secondary: 220 15% 20%;
+    --secondary-foreground: 210 25% 90%;
+
+    --muted: 220 15% 18%;
+    --muted-foreground: 210 15% 65%;
+
+    --accent: 200 85% 55%;
+    --accent-foreground: 220 25% 8%;
+
+    --destructive: 0 70% 60%;
+    --destructive-foreground: 210 25% 95%;
+
+    --border: 220 15% 25%;
+    --input: 220 15% 18%;
+    --ring: 200 85% 55%;
+
+    /* Weather-specific color scales */
+    --temp-cold: 220 85% 65%;
+    --temp-cool: 190 75% 55%;
+  /* Moderate (green): match map RGB [120,200,120] -> hsl(120, 40%, 63%) */
+    --temp-moderate: 120 40% 63%;
+    --temp-warm: 25 85% 65%;
+    --temp-hot: 0 85% 65%;
+    
+    /* Wind and precipitation */
+    --wind-color: 120 45% 60%;
+    --precip-color: 200 100% 70%;
+    
+    /* Interface gradients */
+    --gradient-weather: linear-gradient(135deg, hsl(220 85% 65%), hsl(200 85% 55%));
+    --gradient-map: linear-gradient(180deg, hsl(220 25% 8% / 0.8), hsl(220 25% 8% / 0.95));
+    
+    /* Panel styling */
+    --panel-bg: 220 20% 12% / 0.95;
+    --panel-border: 220 15% 25% / 0.6;
+    
+    /* Interactive elements */
+    --hover-overlay: 200 85% 55% / 0.1;
+    --active-overlay: 200 85% 55% / 0.2;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .light {
+    /* Light mode for weather visualization */
+    --background: 210 25% 98%;
+    --foreground: 220 25% 15%;
+    --card: 0 0% 100%;
+    --card-foreground: 220 25% 15%;
+    --primary: 200 85% 45%;
+    --secondary: 210 15% 90%;
+    --muted: 210 15% 92%;
+    --border: 220 15% 85%;
+    --panel-bg: 0 0% 100% / 0.95;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    overflow: hidden; /* For full-screen map */
+  }
+  
+  /* Weather visualization utilities */
+  .weather-panel {
+    @apply bg-card/95 backdrop-blur-md border border-border/60 rounded-lg shadow-xl;
+  }
+  
+  .station-marker {
+    @apply transition-all duration-200 ease-out;
+  }
+  
+  .control-button {
+    @apply bg-secondary/80 hover:bg-secondary text-secondary-foreground 
+           border border-border/40 rounded-md px-3 py-2 text-sm font-medium
+           transition-all duration-200 hover:scale-105 active:scale-95;
+  }
+}
