@@ -5,7 +5,7 @@ This project is an interactive visualization of historical ASOS weather station 
 
 ## Getting Started
 
-1. **Clone the repository:**
+1. **Clone the repo**
 2. **Install dependencies:**
 	```sh
 	npm install
@@ -25,3 +25,6 @@ This project is an interactive visualization of historical ASOS weather station 
 - deck.gl (visualization)
 - maplibre-gl & react-map-gl (mapping)
 - recharts (charts)
+
+## Sample image generated with export function ##
+<img width="1920" height="959" alt="weather-map-3d" src="https://github.com/user-attachments/assets/fbae5d08-2f30-40e8-904b-8b800e4c47c9" />
